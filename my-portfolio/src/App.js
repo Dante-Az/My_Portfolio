@@ -21,7 +21,6 @@ function App() {
     <div className="App">
       
       <Header/>
-      
       <Router/>
       <Footer/>
     </div>
