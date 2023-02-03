@@ -1,3 +1,4 @@
+/* -- Colors -- */
 body {
   height: 100%;
   margin: 0;
@@ -15,7 +16,7 @@ body {
   width: 100%;
 }
 
-/* Keyframes */
+/* Keyframes du loader */
 @-webkit-keyframes animate {
   0%, 20% {
     transform: scaleX(0);
@@ -94,7 +95,7 @@ body {
   color: rgb(62, 132, 150);
 }
 
-.loaderContainer {
+.loader {
   position: fixed;
   top: 0;
   left: 0;
@@ -110,15 +111,16 @@ body {
   -webkit-animation: end 0.5s 1.5s forwards, hide 0s 2s forwards;
           animation: end 0.5s 1.5s forwards, hide 0s 2s forwards;
 }
-
-.loader {
+.loader__text {
+  color: #0bec7c;
+}
+.loader__line {
   position: relative;
   width: 400px;
   height: 4px;
   background: #000;
 }
-
-.loader::before {
+.loader__line::before {
   content: "";
   position: absolute;
   width: 100%;
@@ -128,18 +130,7 @@ body {
   -webkit-animation: animate 3s linear;
           animation: animate 3s linear;
 }
-
-.loaderText {
-  color: #0bec7c;
-}
-
-.introContainer {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.loader::after {
+.loader__line::after {
   content: "";
   position: absolute;
   top: 50%;
@@ -150,4 +141,10 @@ body {
   border-radius: 50%;
   -webkit-animation: animateDot 3s linear;
           animation: animateDot 3s linear;
+}
+
+.introContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }/*# sourceMappingURL=main.css.map */

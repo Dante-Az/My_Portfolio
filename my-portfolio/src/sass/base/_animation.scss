@@ -1,4 +1,4 @@
-/* Keyframes */
+/* Keyframes du loader */
 
 @keyframes animate {
     0%,20% {
@@ -19,11 +19,11 @@
     }
     15%,20% {
         transform: translateY(-50%) scale(1);
-        box-shadow: 0 0 0 4px #0bec7c,
-        0 0 0 10px #0bec7c22,
-        0 0 20px #0bec7c,
-        0 0 40px 5px #0bec7c,
-        0 0 60px 10px #0bec7c ;
+        box-shadow: 0 0 0 4px $primary,
+        0 0 0 10px $secondary,
+        0 0 20px $primary,
+        0 0 40px 5px $primary,
+        0 0 60px 10px $primary ;
     }
     40%,100% {
         transform: translateY(-50%) scale(1) translateX(395px);

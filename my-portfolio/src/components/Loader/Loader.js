@@ -1,9 +1,9 @@
 export default function Loader() {
     return (
         <div>
-            <div className='loaderContainer'>
-                <h1 className='loaderText'>Dev Loading ...</h1>
-                <div className="loader"></div>
+            <div className='loader'>
+                <h1 className='loader__text'>Dev Loading ...</h1>
+                <div className="loader__line"></div>
             </div> 
             <div className='introContainer'>
                 <h1>Présentation</h1>
