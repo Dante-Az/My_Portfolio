@@ -1,7 +1,3 @@
-/* .animContainer {
-    display: flex;
-} */
-
 .loaderContainer {
     position: fixed;
     top: 0;
@@ -56,49 +52,4 @@
     animation: animateDot 3s linear;
 }
 
-/* Keyframes */
 
-@keyframes animate {
-    0%,20% {
-        transform: scaleX(0);
-    }
-    40% {
-        transform: scaleX(1);
-        transform-origin: left;
-    }
-}
-
-@keyframes animateDot {
-    0% {
-        transform: translateY(-50%) scale(0);
-    }
-    5% {
-        transform: translateY(-50%) scale(1);
-    }
-    15%,20% {
-        transform: translateY(-50%) scale(1);
-        box-shadow: 0 0 0 4px #0bec7c,
-        0 0 0 10px #0bec7c22,
-        0 0 20px #0bec7c,
-        0 0 40px 5px #0bec7c,
-        0 0 60px 10px #0bec7c ;
-    }
-    40%,100% {
-        transform: translateY(-50%) scale(1) translateX(395px);
-    }
-}
-
-@keyframes end {
-    0%  {
-        opacity: 1;
-    }
-    100% {
-        opacity: 0;
-    }
-}
-
-@keyframes hide {
-    100% {
-        z-index: -1;
-    }
-}
