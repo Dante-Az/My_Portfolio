@@ -1,0 +1,15 @@
+/// Mixin setRobotoFonts : Définit les @font-face "roboto"
+@mixin setRobotoFonts {
+    @each $style in $RobotoFontStyles {
+        @font-face {
+            font-family: "robotocondensed-#{$style}";
+            src: url("../../../assets/fonts/robotocondensed-#{$style}-webfont.woff2") format('woff2'),
+                 url("../../../assets/fonts/robotocondensed-#{$style}-webfont.woff") format('woff');
+        }
+    }
+}
+
+/// Mixin robotoTypo : sert à définir le style désiré de la font roboto
+@mixin robotoTypo($style) {
+    font-family : 'robotocondensed-#{$style}', Arial, Helvetica, sans-serif;
+}

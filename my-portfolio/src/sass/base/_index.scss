@@ -8,7 +8,10 @@ body {
     min-height: 100vh;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background: #222;
+    @include robotoTypo("light");
+    color: white;
+    background-image: url(../../../public/endless-constellation.svg);
+    /* background by SVGBackgrounds.com */
   }
   
   #root {
