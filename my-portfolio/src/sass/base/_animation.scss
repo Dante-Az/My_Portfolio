@@ -26,7 +26,7 @@
         0 0 60px 10px $primary ;
     }
     40%,100% {
-        transform: translateY(-50%) scale(1) translateX(44vw);
+        transform: translateY(-50%) scale(1) translateX(44.5vw);
     }
 }
 
@@ -171,6 +171,19 @@
     }
   }
   
+  // Keyframes intro
+
+  @keyframes text-focus-in {
+    0% {
+      filter: blur(12px);
+      opacity: 0;
+    }
+    100% {
+      filter: blur(0px);
+      opacity: 1;
+    }
+  }
+
   // Keyframes du profil d'intro
 
   @keyframes animate_one {
