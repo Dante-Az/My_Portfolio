@@ -1,0 +1,21 @@
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    column-gap: 20px;
+    
+    &__content {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &__text {
+        margin: 0;
+        font-size: 4vw;
+        @include robotoTypo("bold");
+
+        &--underline {
+            text-decoration: underline $primary;
+        }
+    }
+}

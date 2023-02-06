@@ -1,3 +1,4 @@
+import Intro from "../Intro/Intro"
 export default function Loader() {
     return (
         <div>
@@ -5,9 +6,7 @@ export default function Loader() {
                 <h1 className='loader__text'>Dev Loading ...</h1>
                 <div className="loader__line"></div>
             </div> 
-            <div className='intro'>
-                <h1>Présentation</h1>
-            </div>  
+            <Intro/>
         </div>
     )
 }

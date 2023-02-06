@@ -13,3 +13,18 @@
 @mixin robotoTypo($style) {
     font-family : 'robotocondensed-#{$style}', Arial, Helvetica, sans-serif;
 }
+
+// loader picture line
+
+@mixin setLineSizeY {
+    position: absolute;
+    width: 100%;
+    height: 3px;
+}
+
+@mixin setLineSizeX {
+    position: absolute;
+    width: 3px;
+    height: 100%;
+}
+

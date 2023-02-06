@@ -10,11 +10,11 @@
     flex-direction: column;
     width: 100%;
     animation: end 0.5s 3.5s forwards, hide 0s 4s forwards;
-    background-image: url(../../../public/endless-constellation.svg);
-    /* background by SVGBackgrounds.com */
+    background: $background;
+    z-index: 2;
 
     &__text {
-        font-size: 42px;
+        font-size: 6vw;
         color: $primary;
         @include robotoTypo("bold");
         animation: text-flicker-in-glow 3s linear both;
@@ -22,8 +22,8 @@
 
     &__line {
         position: relative;
-        width: 400px;
-        height: 4px;
+        width: 45vw;
+        height: 1.5vh;
         background: $tertiary;
 
         &::before {
@@ -33,7 +33,7 @@
             height: 100%;
             background: $primary;
             transform-origin: left;
-            animation: animate 6s linear;
+            animation: animate 5s linear;
         }
 
         &::after {
@@ -41,19 +41,19 @@
             position: absolute;
             top: 50%;
             transform: translateY(-50%) scale(0);
-            width: 10px;
-            height: 10px;
+            width: 20px;
+            height: 20px;
             background: $primary;
             border-radius: 50%;
-            animation: animateDot 6s linear;
+            animation: animateDot 5s linear;
         }
     }
 }
 
-.intro {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+
+
+
+
+
 
 

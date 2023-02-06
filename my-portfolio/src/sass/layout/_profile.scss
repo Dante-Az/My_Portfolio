@@ -1,0 +1,41 @@
+.intro__card {
+    position: relative;
+    background-color: #131b33;
+    width: clamp(100px, 40vw, 300px);
+    height: clamp(150px, 40vw, 400px);
+    overflow: hidden;
+
+    span:nth-child(1) {
+        @include setLineSizeY;
+        top: 0;
+        left: 0;
+        background: linear-gradient(to right, transparent, $primary);
+        animation: animate_one 2s linear infinite;
+    }
+
+    span:nth-child(2) {
+        @include setLineSizeX;
+        top: 0;
+        right: 0;
+        background: linear-gradient(to bottom, transparent, $primary);
+        animation: animate_two 2s linear infinite;
+        animation-delay: 1s;
+    }
+
+    span:nth-child(3) {
+        @include setLineSizeY;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to left, transparent, $primary);
+        animation: animate_three 2s linear infinite;
+    }
+
+    span:nth-child(4) {
+        @include setLineSizeX;
+        bottom: 0;
+        left: 0;
+        background: linear-gradient(to top, transparent, $primary);
+        animation: animate_four 2s linear infinite;
+        animation-delay: 1s;
+    }
+}
