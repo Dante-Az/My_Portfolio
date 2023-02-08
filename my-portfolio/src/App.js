@@ -12,16 +12,17 @@ function App() {
   useEffect (() => {
     setTimeout(() => {
       setLoader(false);
-    }, 4000);
+    }, 1000);
   }, []);
 
   return loader ? (
     <Loader/>
   ) : (
     <div className="App">
-      
       <Header/>
-      <Router/>
+      <div className='content'>
+        <Router/>
+      </div>
       <Footer/>
     </div>
   );

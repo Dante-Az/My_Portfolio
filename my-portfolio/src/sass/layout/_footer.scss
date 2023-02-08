@@ -1,3 +1,9 @@
 .footer {
-    color:rgb(62, 132, 150);
+    background-color: $background;
+    margin: 0;
+    width: 100%;
+
+    &__text {
+        margin: 0;
+    }
 }

@@ -1,6 +1,7 @@
 @import "./utils/variables";
 @import "./utils/mixins/mixins";
 
+@import './base/meyerReset';
 @import './base/index';
 @import './base/app';
 @import './base/typography';
@@ -15,7 +16,7 @@
 @import './layout/header';
 @import './layout/navbar';
 @import './layout/footer';
-@import './layout/Loader';
+@import './layout/loader';
 @import './layout/intro';
 @import './layout/profile';
 

@@ -1,3 +1,57 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
 html {
   scroll-behavior: smooth;
 }
@@ -8,7 +62,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 60px;
   min-height: 100vh;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -20,6 +73,10 @@ body {
 
 #root {
   width: 100%;
+}
+
+.content {
+  margin: 0 60px;
 }
 
 @font-face {
@@ -270,7 +327,7 @@ body {
   align-items: center;
   justify-content: space-between;
   transition: 0.6s;
-  padding-bottom: 20px;
+  padding: 30px 0;
 }
 .header__text {
   font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
@@ -282,16 +339,13 @@ body {
 @media screen and (min-width: 930px) {
   .header.sticky {
     background-color: #2b2d3d;
-    padding: 0;
-  }
-  .header__text.sticky {
-    margin: 0;
+    padding: 15px 0;
   }
 }
 @media screen and (max-width: 930px) {
   .header {
     background-color: #2b2d3d;
-    padding: 0;
+    padding: 10px 0;
   }
 }
 .navbar {
@@ -331,7 +385,7 @@ body {
     overflow: hidden;
   }
   .nav-block.active {
-    height: 250px;
+    height: 195px;
   }
   .navbar {
     display: block;
@@ -370,7 +424,12 @@ body {
   }
 }
 .footer {
-  color: rgb(62, 132, 150);
+  background-color: #2b2d3d;
+  margin: 0;
+  width: 100%;
+}
+.footer__text {
+  margin: 0;
 }
 
 .loader {
@@ -388,8 +447,9 @@ body {
   z-index: 2;
 }
 .loader__text {
-  font-size: 6vw;
+  font-size: max(6vw, 24px);
   color: #00dfc4;
+  margin-bottom: 20px;
   font-family: "robotocondensed-bold", Arial, Helvetica, sans-serif;
   animation: text-flicker-in-glow 3s linear both;
 }

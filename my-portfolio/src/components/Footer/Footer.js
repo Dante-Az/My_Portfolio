@@ -1,5 +1,8 @@
 export default function Footer() {
     return (
-        <h1 className="footer">Footer</h1>
+        <footer className="footer">
+            <h1 className="footer_text">Footer</h1>
+            
+        </footer>
     )
 }
