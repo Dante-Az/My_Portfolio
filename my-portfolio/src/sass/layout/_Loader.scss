@@ -8,7 +8,6 @@
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    width: 100%;
     animation: end 0.5s 3.5s forwards, hide 0s 4s forwards;
     background: $background;
     z-index: 2;
@@ -23,7 +22,7 @@
     &__line {
         position: relative;
         width: 45vw;
-        height: 1.5vh;
+        height: 1vh;
         background: $tertiary;
 
         &::before {
@@ -49,8 +48,6 @@
         }
     }
 }
-
-
 
 
 

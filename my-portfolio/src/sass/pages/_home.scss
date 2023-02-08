@@ -1,0 +1,8 @@
+.home {
+    margin-top: 100px
+}
+
+.lorem {
+    @include robotoTypo('bold');
+    font-size: 42px;
+}
