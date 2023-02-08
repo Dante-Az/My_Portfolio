@@ -234,3 +234,14 @@
       transform: translateX(-8px) translateY(-8px);
     }
   }
+
+  //keyframes des icones
+
+  @keyframes scale-up-center {
+    0% {
+      transform: scale(1);
+    }
+    100% {
+      transform: scale(1.5);
+    }
+  }
