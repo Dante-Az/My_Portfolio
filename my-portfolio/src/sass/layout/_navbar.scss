@@ -6,24 +6,22 @@
     column-gap: 20px;
     align-items: center;
     margin-right: 40px;
-
+    
     &__link {
         @include robotoTypo('regular');
         font-size: max(1vw, 24px);
+        text-decoration: none;
         cursor: pointer;
         transition: 0.6s;
+        color: white;
 
         &__border {
             @include robotoTypo('bold');
             padding: 5px;
         }
     }
-
-    &__link a {
-        text-decoration: none;
-        color: inherit;
-    }
 }
+
 
 .hamburger-react {
     display: none;
@@ -54,10 +52,10 @@
         text-align: center;
         transition: 0.5s;
         opacity: 0;
+    }
 
-        &__link {
-            margin-bottom: 12px;
-        }
+    .navbar li {
+        margin-bottom: 12px;
     }
 
     .nav-block.active ul{
@@ -72,17 +70,10 @@
 }
 
 @media screen and (min-width:930px) {
-    .navbar__link:hover {
+    .navbar__link:hover, .navbar__link--active {
         color: $primary;
         @include robotoTypo('bold');
         animation: text-shadow-pop-br 0.6s both;
-    }
-
-    .navbar__link--active {
-        color: $primary;
-        @include robotoTypo('bold');
-        text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
-        transform: translateX(-8px) translateY(-8px);
     }
 
     .navbar__link__border {

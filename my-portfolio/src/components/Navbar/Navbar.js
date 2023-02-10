@@ -1,9 +1,30 @@
 import Hamburger from 'hamburger-react'
-import { useState } from 'react';
 export default function Navbar() {
     
-    const [isActive, setIsActive] = useState('#')
+    const sections = document.querySelectorAll("section[id]");
 
+    window.addEventListener("scroll", navHighlighter);
+
+    function navHighlighter() {
+    
+    let scrollY = window.pageYOffset;
+    sections.forEach(current => {
+        const sectionHeight = current.offsetHeight;
+        const sectionTop = current.offsetTop - 120;
+        const sectionId = current.getAttribute("id");
+  
+        if (
+        scrollY > sectionTop &&
+        scrollY <= sectionTop + sectionHeight
+        ){
+        document.querySelector(".nav-block a[href*=" + sectionId + "]").classList.add("navbar__link--active");
+        } else {
+        document.querySelector(".nav-block a[href*=" + sectionId + "]").classList.remove("navbar__link--active");
+        }
+    });
+    }
+
+ 
     return(
         <div>
         <Hamburger onToggle={toggle =>{
@@ -16,20 +37,20 @@ export default function Navbar() {
         }}/>
         <nav className="nav-block">
             <ul className= "navbar">
-                <li onClick={() => setIsActive('#about')} className={isActive === "#about" ? "navbar__link navbar__link--active" : "navbar__link"}>
-                    <a href="#about">Qui suis-je?</a>
+                <li className="navbar__link">
+                    <a className="navbar__link" href="#about">Qui suis-je?</a>
                 </li>
-                <li onClick={() => setIsActive('#skills')} className={isActive === "#skills" ? "navbar__link navbar__link--active" : "navbar__link"}>
-                    <a href="#skills">Compétences</a>
+                <li className="navbar__link">
+                    <a  className="navbar__link" href="#skills">Compétences</a>
                 </li>
-                <li onClick={() => setIsActive('#projects')} className={isActive === "#projects" ? "navbar__link navbar__link--active" : "navbar__link"}>
-                    <a href="#projects">Projets</a>
+                <li className="navbar__link">
+                    <a className="navbar__link" href="#projects">Projets</a>
                 </li>
-                <li onClick={() => setIsActive('#contact')} className={isActive === "#contact" ? "navbar__link navbar__link--active" : "navbar__link"}>
-                    <a href="#contact">Contact</a>
+                <li className="navbar__link">
+                    <a className="navbar__link" href="#contact">Contact</a>
                 </li>
-                <li className="navbar__link navbar__link__border">
-                    <a href="#about">Mon CV</a>
+                <li className="navbar__link">
+                    <a className="navbar__link navbar__link__border" href="https://www.google.fr/">Mon CV</a>
                 </li>
             </ul>
         </nav>
