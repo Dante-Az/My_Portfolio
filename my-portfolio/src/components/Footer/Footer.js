@@ -5,8 +5,12 @@ export default function Footer() {
         <footer className="footer">
             <h1 className="footer__text">© Jérémy C. - Portfolio</h1>
             <div>
-                <GithubLogo className="footer__icon"/>
-                <LinkedinLogo className="footer__icon"/>
+                <a href="https://github.com/" target="_blank" rel="noreferrer">
+                    <GithubLogo className="footer__icon"/> 
+                </a>
+                <a href="https://fr.linkedin.com/" target="_blank" rel="noreferrer">
+                    <LinkedinLogo className="footer__icon"/>
+                </a>
             </div>
         </footer>
     )

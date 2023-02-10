@@ -1,19 +1,9 @@
 import Hamburger from 'hamburger-react'
+import { useState } from 'react';
 export default function Navbar() {
     
-    const onClick = () => {
-        window.location.href = "#about"
-    };
-    const onClick2 = () => {
-        window.location.href = "#skills"
-    };
-    const onClick3 = () => {
-        window.location.href = "#projects"
-    };
-    const onClick4 = () => {
-        window.location.href = "#contact"
-    };
-    
+    const [isActive, setIsActive] = useState('#')
+
     return(
         <div>
         <Hamburger onToggle={toggle =>{
@@ -25,12 +15,22 @@ export default function Navbar() {
             }
         }}/>
         <nav className="nav-block">
-            <ul className="navbar">
-                <li className="navbar__link" onClick={onClick}>Qui suis-je?</li>
-                <li className="navbar__link" onClick={onClick2}>Compétences</li>
-                <li className="navbar__link" onClick={onClick3}>Projets</li>
-                <li className="navbar__link" onClick={onClick4}>Contact</li>
-                <li className="navbar__link navbar__link__border">Mon CV</li>
+            <ul className= "navbar">
+                <li onClick={() => setIsActive('#about')} className={isActive === "#about" ? "navbar__link navbar__link--active" : "navbar__link"}>
+                    <a href="#about">Qui suis-je?</a>
+                </li>
+                <li onClick={() => setIsActive('#skills')} className={isActive === "#skills" ? "navbar__link navbar__link--active" : "navbar__link"}>
+                    <a href="#skills">Compétences</a>
+                </li>
+                <li onClick={() => setIsActive('#projects')} className={isActive === "#projects" ? "navbar__link navbar__link--active" : "navbar__link"}>
+                    <a href="#projects">Projets</a>
+                </li>
+                <li onClick={() => setIsActive('#contact')} className={isActive === "#contact" ? "navbar__link navbar__link--active" : "navbar__link"}>
+                    <a href="#contact">Contact</a>
+                </li>
+                <li className="navbar__link navbar__link__border">
+                    <a href="#about">Mon CV</a>
+                </li>
             </ul>
         </nav>
         </div>
