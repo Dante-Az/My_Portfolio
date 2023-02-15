@@ -1,0 +1,36 @@
+.about {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &__content {
+        display: flex;
+        flex-direction: column;
+        width: 65%;
+        transition-delay: 200ms;
+    }
+
+    &__text {
+        font-size: max(18px, 2vw);
+    }
+
+    &__button {
+        display: flex;
+        column-gap: 15px;
+        margin-top: 10px;
+    }
+}
+
+
+// MEDIA QUERIES
+
+@media screen and (max-width:930px) {
+    .about {
+        flex-direction: column;
+        gap: 10px;
+
+        &__content {
+            width: 100%;
+        }
+    }
+}

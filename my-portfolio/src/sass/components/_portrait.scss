@@ -1,0 +1,32 @@
+.box {
+    position: relative;
+    width: max(250px, 25vw);
+    height: max(250px, 25vw);
+    background-color: $background;
+    border-radius: 50%;
+    overflow: hidden;
+
+
+    &::before {
+        content: '';
+        position: absolute;
+        inset: -10px 75px;
+        background: linear-gradient(315deg, $primary, $secondary);
+        transition: 0.5s;
+        animation: portrait_animate 4s linear infinite;
+    }
+
+    &:hover::before {
+        inset: -20px 0px;
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: 6px;
+        background: center / cover url(../../assets/IMG.jpg);
+        border-radius: 50%;
+        z-index: 1;
+    }
+}
+

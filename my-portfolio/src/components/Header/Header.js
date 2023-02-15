@@ -14,9 +14,9 @@ const changeValueOnScroll = () => {
 window.addEventListener('scroll',changeValueOnScroll);
 
     return (
-    <div className={scroll? "header sticky":"header"}>
+    <header className={scroll? "header sticky":"header"}>
         <h1 className="header__text">Jérémy Carrière</h1>
         <Navbar/>
-    </div>
+    </header>
     ) 
 }

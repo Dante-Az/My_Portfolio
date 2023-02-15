@@ -1,0 +1,21 @@
+.button {
+    margin-top: 5px;
+    cursor: pointer;
+    @include robotoTypo ('bold');
+    font-size: max(14px,1vw);
+    
+    background-color: transparent;
+    border: solid 2px $primary;
+    border-radius: 10px;
+    width: max(120px,7.5vw);
+    height: max(40px,3vw);
+    transition: 0.6s;
+
+    &--green {
+        color: $primary;
+        &:hover {
+            background-color: $primary;
+            color: white;
+        }
+    }
+}

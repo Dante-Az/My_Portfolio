@@ -245,3 +245,14 @@
       transform: scale(1.5);
     }
   }
+
+  //keyframes du portrait
+
+  @keyframes portrait_animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

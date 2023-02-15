@@ -1,0 +1,49 @@
+.socials {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    justify-content: center;
+    left: 5px;
+    bottom: 20%;
+
+    &__icon {
+        height: max(25px, 1.5vw);
+        width: max(25px, 1.5vw);
+        color: $primary;
+
+        &:hover {
+            animation: scale-up-center 0.4s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+        }
+    }
+
+    &::after, &::before {
+        content: '';
+        align-self: center;
+        width: 2px;
+        height: 2rem;
+        background-color: $primary;
+    }
+}
+
+.scrollup {
+    position: fixed;
+    display: flex;
+    align-items: center;
+    column-gap: 5px;
+    right: -1.3rem;
+    bottom: 25%;
+    color: $primary;
+    transform: rotate(90deg);
+
+    &__icon {
+        height: max(20px, 1.5vw)
+    }
+    
+    &__button {
+        
+        text-decoration: none;
+        font-size: max(16px, 1vw);
+        color: $primary;
+    }
+}

@@ -4,6 +4,7 @@ import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import Loader from './components/Loader/Loader';
 import Router from './components/Router/Router';
+import SideNav from './components/SideNav/SideNav';
 
 function App() {
 
@@ -12,7 +13,7 @@ function App() {
   useEffect (() => {
     setTimeout(() => {
       setLoader(false);
-    }, 1000);
+    }, 7000);
   }, []);
 
   return loader ? (
@@ -20,6 +21,7 @@ function App() {
   ) : (
     <div className="App">
       <Header/>
+      <SideNav/>
       <div className='content'>
         <Router/>
       </div>
