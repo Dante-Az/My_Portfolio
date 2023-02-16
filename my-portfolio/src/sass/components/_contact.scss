@@ -1,0 +1,164 @@
+.contact {
+    position: relative;
+    min-width: 1100px;
+    min-height: 550px;
+    display: flex;
+    z-index: 1000;
+
+    &__info {
+        position: absolute;
+        top: 40px;
+        width: 350px;
+        height: calc(100% - 80px);
+        background: $primary;
+        border-radius: 15px;
+        z-index: 1;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        justify-content: space-between;
+        box-shadow: 0 20px 25px rgba(0,0,0,0.15);
+    }
+    
+    &__info h2 {
+        @include robotoTypo('bold');
+        font-size: 42px;
+    }
+
+    &__form {
+        position: absolute;
+        margin-left: 150px;
+        width: calc(100% - 150px);
+        height: 100%;
+        border: solid 3px $primary;
+        border-radius: 15px;
+        box-shadow: 0 50px 50px rgba(0,0,0,0.15);
+
+        &__block {
+            padding: 70px 50px;
+            padding-left: 250px;
+        }
+    }
+
+    &__form h2 {
+        color: $primary;
+        @include robotoTypo('bold');
+        font-size: 24px;
+
+    }
+}
+
+.info {
+    margin: 40px;
+
+    &__list {
+        position: relative;
+        margin: 20px 0;
+    }
+
+    &__item {
+        position: relative;
+        display: flex;
+        margin: 20px 0;
+        column-gap: 10px;
+        cursor: pointer;
+        align-items: center;
+    }
+
+    &__icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    &__text {
+        @include robotoTypo('italic');
+        font-size: 20px;
+    }
+
+    &__socials {
+        position: relative;
+        display: flex;
+        margin: 40px;
+        justify-content: center;
+
+        &__icon {
+            color: white;
+            width: 3vw;
+            height: 3vw;
+        }
+    }
+}
+
+.form {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    padding-top: 30px;
+
+    &__input {
+        position: relative;
+        margin-bottom: 35px;
+    }
+
+    &__input label {
+        color: white;
+        position: absolute;
+        left: 0;
+        padding: 5px 0;
+        pointer-events: none;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    &__input input, textarea {
+        width: 100%;
+        resize: none;
+        background: transparent;
+        padding: 5px 0;
+        font-size: 18px;
+        color: white;
+        border: none;
+        outline: none;
+        border-bottom: 1px solid $primary;
+    }
+
+    &__input input:focus ~ label, input:valid ~ label, textarea:focus ~ label, textarea:valid ~ label {
+        transform: translateY(-20px);
+        font-size: 12px;
+        letter-spacing: 1px;
+        color: $primary;
+    }
+
+    &__input input[type="submit"] {
+        position: relative;
+        cursor: pointer;
+        background: $primary;
+        color:white;
+        border: none;
+        max-width: 150px;
+        padding: 12px;
+
+        &:hover {
+            background: lighten($color: $primary, $amount: 10%)
+        }
+    }
+}
+
+.w50 {
+    width: 47%;
+}
+
+.w100 {
+    width: 100%;
+}
+
+textarea {
+    height: 120px;
+}
+
+#c-yup {
+    color: red;
+    @include robotoTypo('bolditalic')
+}
+
