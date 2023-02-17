@@ -3,6 +3,8 @@ import { ImLocation } from "react-icons/im";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Swal from 'sweetalert2'
+import emailjs from "@emailjs/browser";
 
 export default function Contact() {
 
@@ -33,8 +35,35 @@ export default function Contact() {
 
     const { register, formState: { errors }, handleSubmit} = useForm ({ resolver: yupResolver(schema)});
 
-    const onSubmit = () => {
-        alert("Merci pour le message")
+    const onSubmit = (data, r) => {
+        Swal.fire({
+            title: 'Message envoyé!',
+            text: 'Je vous réponds le plus vite possible',
+            imageUrl: 'https://unsplash.it/400/200',
+            imageWidth: 400,
+            imageHeight: 200,
+            imageAlt: 'Custom image',
+            background: '#00dfc4',
+            confirmButtonColor: "#2b2d3d"
+          });
+          const templateId = "template_2ubxiee";
+          const serviceId = "service_xnaz6ba";
+          sendFeedback(serviceId, templateId, {
+            firstName: data.firstName,
+            lastName: data.lastName,
+            email: data.email,
+            message: data.message,
+            reply_to: r.target.reset(),
+          })
+    };
+
+    const sendFeedback = (serviceId, templateId, variables) => {
+        emailjs
+        .send(serviceId, templateId, variables, "D4JquVraWHcvT_Fv9")
+        .then ((res) => {
+            console.log("Succes")
+        })
+        .catch((err) => console.error("Il y a une erreur"));
     }
 
     return (
