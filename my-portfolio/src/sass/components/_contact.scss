@@ -1,6 +1,6 @@
 .contact {
     position: relative;
-    min-width: 1100px;
+    // min-width: 1100px;
     min-height: 550px;
     display: flex;
     z-index: 1000;
@@ -8,7 +8,7 @@
     &__info {
         position: absolute;
         top: 40px;
-        width: 350px;
+        max-width: 350px;
         height: calc(100% - 80px);
         background: $primary;
         border-radius: 15px;
@@ -22,7 +22,7 @@
     
     &__info h2 {
         @include robotoTypo('bold');
-        font-size: 42px;
+        font-size: max(32px,3vw);
     }
 
     &__form {
@@ -72,7 +72,7 @@
 
     &__text {
         @include robotoTypo('italic');
-        font-size: 20px;
+        font-size: clamp(16px, 1.6vw, 20px);
     }
 
     &__socials {
@@ -83,8 +83,8 @@
 
         &__icon {
             color: white;
-            width: 3vw;
-            height: 3vw;
+            width: max(40px,3vw);
+            height: max(40px,3vw);
         }
     }
 }
@@ -160,4 +160,91 @@ textarea {
 #c-yup {
     color: red;
     @include robotoTypo('bolditalic')
+}
+
+
+// MEDIA QUERIES
+
+@media screen and (max-width:1150px) {
+
+    .contact__info {
+        top: 0;
+        height: 100%;
+        border: 3px solid $primary;
+        border-radius: 15px 0 0 15px;
+    }
+    .contact__form__block {
+        padding-left: 200px;
+    }
+
+    .info {
+        margin: 40px 20px;
+    }
+}
+
+@media screen and (max-width: 930px) {
+
+    .contact {
+        flex-direction: column-reverse;
+
+        &__info {
+            position: relative;
+            border-radius: 0 0 15px 15px;
+            width: 100%;
+            max-width: 850px;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        &__form {
+            position: relative;
+            margin: 0;
+            width: 100%;
+            border-radius: 15px 15px 0 0;
+
+            &__block {
+                padding: 70px 50px;
+            }
+        }
+    }
+
+    .form {
+        flex-direction: column;
+    }
+
+    .w50 {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 740px) {
+
+    .contact__info {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .contact__form__block {
+        padding: 50px 20px;
+    }
+    
+    .info__socials {
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .contact__form{
+        border: none;
+
+        &__block {
+            padding: 0;
+        }
+    }
+
+    .submit{
+        display: flex;
+        justify-content: center;
+    }
 }

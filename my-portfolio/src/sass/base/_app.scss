@@ -1,3 +1,12 @@
 .content {
     margin: 0 60px;
 }
+
+// MEDIA QUERIES
+
+@media screen and (max-width: 930px) {
+    .content {
+        margin: 0 40px;
+    }
+    
+}

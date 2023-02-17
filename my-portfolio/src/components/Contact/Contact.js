@@ -121,8 +121,8 @@ export default function Contact() {
                                 <label>Écrivez votre message...</label>
                                 { errors.message && <p id="c-yup">{errors.message.message}</p>}
                             </div>
-                            <div className="form__input w100">
-                                <input type="submit" value="Envoi"></input>
+                            <div className="form__input submit w100">
+                                <input type="submit" value="Envoyer"></input>
                             </div>
                         </div>
                     </div>
