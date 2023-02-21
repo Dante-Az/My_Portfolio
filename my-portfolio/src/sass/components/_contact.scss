@@ -75,6 +75,10 @@
         font-size: clamp(16px, 1.6vw, 20px);
     }
 
+    &__text a:hover {
+        @include robotoTypo('bolditalic')
+    }
+
     &__socials {
         position: relative;
         display: flex;
@@ -234,6 +238,10 @@ textarea {
 }
 
 @media screen and (max-width: 480px) {
+
+    .contact__info {
+        border-radius: 15px;
+    }
 
     .contact__form{
         border: none;

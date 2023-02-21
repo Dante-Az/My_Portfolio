@@ -80,7 +80,9 @@ export default function Contact() {
                             </li>
                             <li className="info__item">
                                 <AiOutlineMail className="info__icon"/>
-                                <span className="info__text">jeremyo.carriere@gmail.com</span>
+                                <span className="info__text">
+                                    <a href="mailto:jeremyo.carriere@gmail.com">jeremyo.carriere@gmail.com</a>
+                                </span>
                             </li>
                         </ul>
                     </div>

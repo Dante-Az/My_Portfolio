@@ -23,6 +23,11 @@ time, mark, audio, video {
   vertical-align: baseline;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
@@ -80,6 +85,11 @@ body {
   margin: 0 60px;
 }
 
+@media screen and (max-width: 930px) {
+  .content {
+    margin: 0 40px;
+  }
+}
 @font-face {
   font-family: "robotocondensed-bold";
   src: url("../../../assets/fonts/robotocondensed-bold-webfont.woff2") format("woff2"), url("../../../assets/fonts/robotocondensed-bold-webfont.woff") format("woff");
@@ -366,7 +376,6 @@ body {
 }
 .contact {
   position: relative;
-  min-width: 1100px;
   min-height: 550px;
   display: flex;
   z-index: 1000;
@@ -374,7 +383,7 @@ body {
 .contact__info {
   position: absolute;
   top: 40px;
-  width: 350px;
+  max-width: 350px;
   height: calc(100% - 80px);
   background: #00dfc4;
   border-radius: 15px;
@@ -387,7 +396,7 @@ body {
 }
 .contact__info h2 {
   font-family: "robotocondensed-bold", Arial, Helvetica, sans-serif;
-  font-size: 42px;
+  font-size: max(32px, 3vw);
 }
 .contact__form {
   position: absolute;
@@ -429,7 +438,10 @@ body {
 }
 .info__text {
   font-family: "robotocondensed-italic", Arial, Helvetica, sans-serif;
-  font-size: 20px;
+  font-size: clamp(16px, 1.6vw, 20px);
+}
+.info__text a:hover {
+  font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
 }
 .info__socials {
   position: relative;
@@ -439,8 +451,8 @@ body {
 }
 .info__socials__icon {
   color: white;
-  width: 3vw;
-  height: 3vw;
+  width: max(40px, 3vw);
+  height: max(40px, 3vw);
 }
 
 .form {
@@ -510,11 +522,80 @@ textarea {
   font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
 }
 
+@media screen and (max-width: 1150px) {
+  .contact__info {
+    top: 0;
+    height: 100%;
+    border: 3px solid #00dfc4;
+    border-radius: 15px 0 0 15px;
+  }
+  .contact__form__block {
+    padding-left: 200px;
+  }
+  .info {
+    margin: 40px 20px;
+  }
+}
+@media screen and (max-width: 930px) {
+  .contact {
+    flex-direction: column-reverse;
+  }
+  .contact__info {
+    position: relative;
+    border-radius: 0 0 15px 15px;
+    width: 100%;
+    max-width: 850px;
+    flex-direction: row;
+    align-items: center;
+  }
+  .contact__form {
+    position: relative;
+    margin: 0;
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+  .contact__form__block {
+    padding: 70px 50px;
+  }
+  .form {
+    flex-direction: column;
+  }
+  .w50 {
+    width: 100%;
+  }
+}
+@media screen and (max-width: 740px) {
+  .contact__info {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .contact__form__block {
+    padding: 50px 20px;
+  }
+  .info__socials {
+    margin: 10px;
+  }
+}
+@media screen and (max-width: 480px) {
+  .contact__info {
+    border-radius: 15px;
+  }
+  .contact__form {
+    border: none;
+  }
+  .contact__form__block {
+    padding: 0;
+  }
+  .submit {
+    display: flex;
+    justify-content: center;
+  }
+}
 .box {
   position: relative;
   width: max(250px, 25vw);
   height: max(250px, 25vw);
-  background-color: #2b2d3d;
+  background-color: #2d3246;
   border-radius: 50%;
   overflow: hidden;
 }
@@ -597,11 +678,61 @@ textarea {
   height: max(20px, 1.5vw);
 }
 .scrollup__button {
-  text-decoration: none;
   font-size: max(16px, 1vw);
   color: #00dfc4;
 }
 
+.skill {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.skill__title {
+  font-family: "robotocondensed-bold", Arial, Helvetica, sans-serif;
+  font-size: clamp(24px, 3vw, 42px);
+  width: 50%;
+}
+.skill__logos {
+  width: 50%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+.skill__logo {
+  width: max(42px, 8vw);
+  height: max(42px, 8vw);
+  padding: 40px;
+}
+
+.logos__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.logos__block span {
+  font-family: "robotocondensed-bold", Arial, Helvetica, sans-serif;
+}
+
+@media screen and (max-width: 930px) {
+  .skill {
+    flex-direction: column;
+    row-gap: 30px;
+  }
+  .skill__title, .skill__logos {
+    width: 100%;
+  }
+  .skill__logos {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .skill__logo {
+    padding: 20px;
+  }
+}
+@media screen and (max-width: 428px) {
+  .skill__logos {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 .header {
   position: fixed;
   top: 0;
@@ -626,13 +757,13 @@ textarea {
 
 @media screen and (min-width: 930px) {
   .header.sticky {
-    background-color: #2b2d3d;
+    background-color: #2d3246;
     padding: 15px 0;
   }
 }
 @media screen and (max-width: 930px) {
   .header {
-    background-color: #2b2d3d;
+    background-color: #2d3246;
     padding: 10px 0;
   }
 }
@@ -648,7 +779,6 @@ textarea {
 .navbar__link {
   font-family: "robotocondensed-regular", Arial, Helvetica, sans-serif;
   font-size: max(1vw, 24px);
-  text-decoration: none;
   cursor: pointer;
   transition: 0.6s;
   color: white;
@@ -718,7 +848,7 @@ textarea {
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  background-color: #2b2d3d;
+  background-color: #2d3246;
   margin-top: 30px;
   width: 100%;
   padding: 30px 0;
@@ -749,7 +879,7 @@ textarea {
   justify-content: center;
   flex-direction: column;
   animation: end 0.5s 3.5s forwards, hide 0s 4s forwards;
-  background: #2b2d3d;
+  background: #2d3246;
   z-index: 2;
 }
 .loader__text {
@@ -870,7 +1000,7 @@ textarea {
 }
 
 .section {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
@@ -880,12 +1010,12 @@ textarea {
   column-gap: 15px;
   flex-direction: row;
   font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
+  transform: translateX(-8px) translateY(-8px);
   color: #00dfc4;
   font-size: clamp(24px, 3vw, 42px);
   align-self: center;
-  margin-bottom: 30px;
-  text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
-  transform: translateX(-8px) translateY(-8px);
+  margin-bottom: 150px;
   transition: 0.6s;
 }
 

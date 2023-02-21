@@ -1,6 +1,8 @@
 import { useEffect } from "react";
 import About from "../../components/About/About";
 import Contact from "../../components/Contact/Contact";
+import Projects from "../../components/Projects/Projects";
+import Skills from "../../components/Skills/Skills";
 
 export default function Home() {
 
@@ -36,12 +38,8 @@ export default function Home() {
     return (
         <div className="home">
             <About/>
-            <section id="skills" className="section hidden">
-                <h1 className="section__title">Mes Compétences</h1>
-            </section>
-            <section id="projects" className="section hidden">
-                <h1 className="section__title">Mes Projets</h1>
-            </section>
+            <Skills/>
+            <Projects/>
             <Contact/>
         </div>
     )

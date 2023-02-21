@@ -28,3 +28,12 @@
     height: 100%;
 }
 
+@mixin textShadowBlank {
+    text-shadow: 0 0 $fourth, 0 0 $fourth, 0 0 $fourth, 0 0 $fourth, 0 0 $fourth, 0 0 $fourth, 0 0 $fourth, 0 0 $fourth;
+      transform: translateX(0) translateY(0);
+}
+
+@mixin textShadow {
+    text-shadow: 1px 1px $fourth, 2px 2px $fourth, 3px 3px $fourth, 4px 4px $fourth, 5px 5px $fourth, 6px 6px $fourth, 7px 7px $fourth, 8px 8px $fourth;
+    transform: translateX(-8px) translateY(-8px);
+}
