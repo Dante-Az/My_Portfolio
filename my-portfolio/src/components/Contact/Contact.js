@@ -68,9 +68,12 @@ export default function Contact() {
 
     return (
         <section id="contact" className="section hidden">
-            <h1 className="section__title hidden">Contactez-Moi</h1>
+            <div className="section__title hidden">
+                <AiOutlineMail className="hidden"/>
+                <h1 className="hidden">Contactez-Moi</h1>
+            </div>
             <div className="contact hidden">
-                <div className="contact__info hidden">
+                <div className="contact__info">
                     <div className="info">
                         <h2>Contact Info</h2>
                         <ul className="info__list">
@@ -99,9 +102,9 @@ export default function Contact() {
                         </li>
                     </ul>
                 </div>
-                <form className="contact__form hidden" onSubmit={handleSubmit(onSubmit)}>
+                <form className="contact__form" onSubmit={handleSubmit(onSubmit)}>
                     <div className="contact__form__block">
-                        <h2>Envoyez Un Message</h2>
+                        <h2>Envoyer Un Message</h2>
                         <div className="form">
                             <div className="form__input w50">
                                 <input type="text" name="firstName" required {...register('firstName')}></input>

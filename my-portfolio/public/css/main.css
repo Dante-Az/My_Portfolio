@@ -345,6 +345,14 @@ body {
     transform: rotate(360deg);
   }
 }
+@keyframes scale-up-center {
+  0% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 .about {
   display: flex;
   justify-content: space-between;
@@ -627,8 +635,7 @@ textarea {
   background-color: transparent;
   border: solid 2px #00dfc4;
   border-radius: 10px;
-  width: max(120px, 7.5vw);
-  height: max(40px, 3vw);
+  padding: 10px;
   transition: 0.6s;
 }
 .button--green {
@@ -682,6 +689,77 @@ textarea {
   color: #00dfc4;
 }
 
+.projects__block {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.cover {
+  overflow: hidden;
+  height: 100%;
+}
+.cover:hover {
+  filter: brightness(80%);
+}
+
+.project {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  width: 100%;
+  height: max(400px, 20vh);
+  gap: 10px;
+  border: solid 2px #00dfc4;
+}
+.project__cover {
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.2);
+}
+.project__cover:hover {
+  animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+}
+.project__content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  margin: 5px;
+  height: 100%;
+}
+.project__title {
+  font-family: "robotocondensed-bold", Arial, Helvetica, sans-serif;
+  font-size: min(6vw, 32px);
+  color: #00dfc4;
+}
+.project__description {
+  margin: 5px 0;
+  font-size: min(4vw, 20px);
+}
+.project__tags {
+  display: flex;
+  justify-content: space-around;
+  font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
+}
+.project__links {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+
+@media screen and (max-width: 1304px) {
+  .projects__block {
+    display: flex;
+    flex-direction: column;
+  }
+}
+@media screen and (max-width: 628px) {
+  .project {
+    display: flex;
+    flex-direction: column;
+  }
+}
 .skill {
   display: flex;
   justify-content: space-between;
@@ -1000,14 +1078,13 @@ textarea {
 }
 
 .section {
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
   margin-bottom: 40px;
 }
 .section__title {
   display: flex;
-  column-gap: 15px;
+  column-gap: 25px;
   flex-direction: row;
   font-family: "robotocondensed-bolditalic", Arial, Helvetica, sans-serif;
   text-shadow: 1px 1px #555555, 2px 2px #555555, 3px 3px #555555, 4px 4px #555555, 5px 5px #555555, 6px 6px #555555, 7px 7px #555555, 8px 8px #555555;
@@ -1015,7 +1092,7 @@ textarea {
   color: #00dfc4;
   font-size: clamp(24px, 3vw, 42px);
   align-self: center;
-  margin-bottom: 150px;
+  margin-bottom: 75px;
   transition: 0.6s;
 }
 

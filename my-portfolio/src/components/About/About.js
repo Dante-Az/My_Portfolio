@@ -1,12 +1,12 @@
 import { BsPersonCircle } from "react-icons/bs";
 import Portrait from '../Portrait/Portrait'
-import Button from '../Button/Button'
+import { Link } from "react-router-dom";
 export default function About() {
     return (
         <section id="about" className="section hidden">
             <div className="section__title hidden">
-                <h1 className="hidden">À Propos De Moi</h1>
                 <BsPersonCircle/>
+                <h1 className="hidden">À Propos De Moi</h1>
             </div>
                 <div className='about hidden'>
                     <Portrait className="hidden"/>
@@ -20,12 +20,8 @@ export default function About() {
                             Etiam euismod pellentesque dui, et accumsan libero pellentesque id.
                         </p>
                         <div className='about__button hidden'>
-                            <Button
-                            content = "Me Contacter"
-                            />
-                            <Button
-                            content = "Mon CV"
-                            />
+                            <Link to="#contact" className="button button--green">Me contacter</Link>
+                            <Link to="https://www.google.fr/" target="_blank" className="button button--green">Mon CV</Link>
                         </div>
                     </div>
                 </div>
